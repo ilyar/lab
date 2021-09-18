@@ -24,7 +24,6 @@ import {WalletService} from "./wallet.service";
     }),
   ],
   providers: [
-    WalletService,
   ],
   bootstrap: [AppComponent],
 })

@@ -18,7 +18,8 @@ import {WalletService} from '../wallet.service'
       </div>
       <div class="grid-x grid-padding-x">
         <div class="large-12 cell align-center">
-<!--          <button class="button" (click)="wallet.signIn()">Connect</button>-->
+<!--          <button class="button" (click)="wallet.signIn()">Connect Wallet</button>-->
+          <button class="button">Connect Wallet</button>
         </div>
       </div>
     </div>
@@ -41,9 +42,5 @@ export class PanelComponent {
   @Input() title?: string;
   @Input() description?: string;
 
-  // constructor(
-  //   wallet: WalletService,
-  // ) {
-  // }
-
+  constructor(private wallet: WalletService) {}
 }

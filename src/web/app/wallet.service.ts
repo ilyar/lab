@@ -1,10 +1,14 @@
-// import {Injectable} from '@angular/core'
+import {Injectable} from '@angular/core'
 import {
   config,
   configList,
   NetworkConfig,
 } from '../config'
-import {connect, keyStores, WalletConnection} from 'near-api-js'
+import {
+  connect,
+  keyStores,
+  WalletConnection,
+} from 'near-api-js'
 import {
   formatNearAmount,
   parseNearAmount,
@@ -14,16 +18,16 @@ import {Depositum} from '../../contract/depositum/depositum'
 const toNear = (balance: string) => Math.floor(parseFloat(formatNearAmount(balance)) * 100) / 100
 const envDefault = 'testnet'
 
-// @Injectable({
-//   providedIn: 'root',
-// })
+@Injectable({
+  providedIn: 'root',
+})
 export class WalletService {
   connection?: WalletConnection
   contractName?: string
   contract?: Depositum
   accountId?: string
   config?: NetworkConfig
-  configList: NetworkConfig[]
+  configList: NetworkConfig[] = []
   // Depositum
   coinList: string[] = []
 
@@ -36,16 +40,17 @@ export class WalletService {
 
   async initContract(env: string): Promise<void> {
     this.config = config(env) // TODO implement detect env
-    const near = await connect(Object.assign({
-      deps: {
-        keyStore: new keyStores.BrowserLocalStorageKeyStore(),
-      },
-    }, this.config))
-    this.connection = new WalletConnection(near, this.config.networkId)
-    this.accountId = this.connection.getAccountId()
-    this.contractName = this.config.contractName
-    this.contract = new Depositum(this.connection.account(), this.contractName)
-    await this.update()
+    // FIXME yarn build_web => [error] SyntaxError: build/web/main-es2015.XXX.js: Deleting local variable in strict mode. (1:259472)
+    // const near = await connect(Object.assign({
+    //   deps: {
+    //     keyStore: new keyStores.BrowserLocalStorageKeyStore(),
+    //   },
+    // }, this.config))
+    // this.connection = new WalletConnection(near, this.config.networkId)
+    // this.accountId = this.connection.getAccountId()
+    // this.contractName = this.config.contractName
+    // this.contract = new Depositum(this.connection.account(), this.contractName)
+    // await this.update()
   }
 
   async update(): Promise<void> {

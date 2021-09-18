@@ -1,6 +1,5 @@
 import {Component} from '@angular/core'
 import pkg from '../../../package.json'
-import {WalletService} from "./wallet.service";
 
 @Component({
   selector: 'app-root',
@@ -15,9 +14,4 @@ import {WalletService} from "./wallet.service";
 export class AppComponent {
   title = pkg.name.toUpperCase()
   description = pkg.description
-
-  constructor(
-    wallet: WalletService,
-  ) {
-  }
 }

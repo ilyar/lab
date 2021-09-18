@@ -1,7 +1,7 @@
 {
   "name": "depositum",
   "description": "The simplify DiFi",
-  "version": "1.0.0-aplp.0",
+  "version": "1.0.0-alpha.0",
   "repository": "git@github.com:InfinityHackathon/metabuidl-2021-novum-depositum.git",
   "license": "UNLICENSED",
   "browserslist": [
@@ -13,11 +13,11 @@
     "postinstall": "yarn --silent asset",
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --base-href=/",
-    "deploy-web": "ng deploy --base-href=/",
+    "build_web": "ng build --base-href=/",
+    "deploy_web": "ng deploy --base-href=/",
     "asset": "pwa-asset-generator src/web/asset/logo.svg src/web/asset/icon --favicon --favicon --type png --padding 0 --background transparent --opaque false --log false",
     "watch": "ng build --watch --configuration development",
-    "test-coverage": "yarn test --code-coverage",
+    "test_coverage": "yarn test --code-coverage",
     "lint": "ng lint",
     "test": "ng test --watch=false --browsers=ChromeHeadless"
   },
@@ -102,7 +102,7 @@
     "@angular/router": "~12.2.0",
     "@angular/service-worker": "~12.2.0",
     "near-api-js": "^0.42.0",
-    "rxjs": "~6.6.0",
+    "rxjs": "^7.3.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
