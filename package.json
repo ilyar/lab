@@ -1,10 +1,21 @@
 {
-  "name": "ng-app",
-  "version": "0.0.0",
+  "name": "depositum",
+  "description": "The simplify DiFi",
+  "version": "1.0.0-aplp.0",
+  "repository": "git@github.com:InfinityHackathon/metabuidl-2021-novum-depositum.git",
+  "license": "UNLICENSED",
+  "browserslist": [
+    "defaults",
+    "Firefox ESR",
+    "not IE 11"
+  ],
   "scripts": {
+    "postinstall": "yarn --silent asset",
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --base-href=/",
+    "deploy-web": "ng deploy --base-href=/",
+    "asset": "pwa-asset-generator src/web/asset/logo.svg src/web/asset/icon --favicon --favicon --type png --padding 0 --background transparent --opaque false --log false",
     "watch": "ng build --watch --configuration development",
     "test-coverage": "yarn test --code-coverage",
     "lint": "ng lint",
@@ -31,8 +42,20 @@
           "plugin:@angular-eslint/template/process-inline-templates"
         ],
         "rules": {
+          "object-curly-spacing": [
+            "error",
+            "never"
+          ],
+          "computed-property-spacing": [
+            "error",
+            "always"
+          ],
+          "comma-dangle": [
+            "error",
+            "always-multiline"
+          ],
           "semi": [
-            2,
+            "error",
             "never"
           ],
           "quotes": [
@@ -77,6 +100,8 @@
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
+    "@angular/service-worker": "~12.2.0",
+    "foundation-sites": "^6.7.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
@@ -94,6 +119,7 @@
     "@types/node": "^12.11.1",
     "@typescript-eslint/eslint-plugin": "4.28.2",
     "@typescript-eslint/parser": "4.28.2",
+    "angular-cli-ghpages": "^1.0.0-rc.2",
     "eslint": "^7.26.0",
     "jasmine-core": "~3.8.0",
     "karma": "~6.3.0",
@@ -101,6 +127,7 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
+    "pwa-asset-generator": "^4.3.6",
     "typescript": "~4.3.5"
   }
 }

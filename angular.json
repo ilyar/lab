@@ -33,13 +33,15 @@
             "tsConfig": "tsconfig.web.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/web/favicon.ico",
-              "src/web/asset"
+              "src/web/asset",
+              "src/web/manifest.webmanifest"
             ],
             "styles": [
               "src/web/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "serviceWorker": true,
+            "ngswConfigPath": ".etc/service-worker.json"
           },
           "configurations": {
             "production": {
@@ -101,8 +103,8 @@
             "karmaConfig": ".etc/karma.conf.js",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/web/favicon.ico",
-              "src/web/asset"
+              "src/web/asset",
+              "src/web/manifest.webmanifest"
             ],
             "styles": [
               "src/web/styles.scss"
@@ -117,6 +119,12 @@
               "src/**/*.ts",
               "src/**/*.html"
             ]
+          }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "repo": "git@github.com:depositum/depositum.github.io.git"
           }
         }
       }
