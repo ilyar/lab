@@ -1,8 +1,8 @@
 {
   "short_name": "DEPOSITUM",
-  "name": "DEPOSITUM: The simplify DiFi",
+  "name": "DEPOSITUM — The simplify DiFi",
   "description": "The simplify DiFi",
-  "theme_color": "#000000",
+  "theme_color": "#1976d2",
   "background_color": "#ffffff",
   "display": "standalone",
   "scope": "./",

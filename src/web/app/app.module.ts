@@ -5,12 +5,13 @@ import {AppRoutingModule} from './app-routing.module'
 import {AppComponent} from './app.component'
 import {ServiceWorkerModule} from '@angular/service-worker'
 import {environment} from '../environments/environment'
-import {WelcomeComponent} from './welcome/welcome.component'
+import {PanelComponent} from './panel/panel.component'
+import {WalletService} from "./wallet.service";
 
 @NgModule({
   declarations: [
     AppComponent,
-    WelcomeComponent,
+    PanelComponent,
   ],
   imports: [
     BrowserModule,
@@ -22,7 +23,9 @@ import {WelcomeComponent} from './welcome/welcome.component'
       registrationStrategy: 'registerWhenStable:30000',
     }),
   ],
-  providers: [],
+  providers: [
+    WalletService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

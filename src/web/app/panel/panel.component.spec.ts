@@ -1,20 +1,19 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing'
+import {PanelComponent} from './panel.component'
 
-import {WelcomeComponent} from './welcome.component'
-
-describe('WelcomeComponent', () => {
-  let component: WelcomeComponent
-  let fixture: ComponentFixture<WelcomeComponent>
+describe('PanelComponent', () => {
+  let component: PanelComponent
+  let fixture: ComponentFixture<PanelComponent>
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ WelcomeComponent ],
+      declarations: [ PanelComponent ],
     })
     .compileComponents()
   })
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WelcomeComponent)
+    fixture = TestBed.createComponent(PanelComponent)
     component = fixture.componentInstance
     fixture.detectChanges()
   })
